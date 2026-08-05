@@ -1,17 +1,23 @@
-import React, { useState } from 'react'
-import { ArrowDown, Sparkles, Mail, Copy, Check } from 'lucide-react'
-import { DEVELOPER_INFO } from '../data/portfolioData'
-import { GithubIcon, LinkedinIcon } from './Icons'
+import React, { useState } from 'react';
+import { ArrowDown, Sparkles, Mail, Copy, Check } from 'lucide-react';
+import { DEVELOPER_INFO } from '../data/portfolioData';
+import { GithubIcon, LinkedinIcon } from './Icons';
+
+type TerminalTab = 'profile' | 'stack' | 'status';
 
 export const Hero: React.FC = () => {
-  const [copied, setCopied] = useState(false)
-  const [terminalTab, setTerminalTab] = useState<'profile' | 'stack' | 'status'>('profile')
+  const [copied, setCopied] = useState(false);
+  const [terminalTab, setTerminalTab] = useState<TerminalTab>('profile');
 
-  const copyEmail = () => {
-    navigator.clipboard.writeText(DEVELOPER_INFO.socials.email)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(DEVELOPER_INFO.socials.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Email nusxalashda xatolik yuz berdi:', err);
+    }
+  };
 
   return (
     <section
@@ -104,7 +110,7 @@ export const Hero: React.FC = () => {
                 <span>View Projects</span>
                 <ArrowDown size={18} />
               </a>
-              <button onClick={copyEmail} className="btn-secondary" title="Copy email address">
+              <button onClick={copyEmail} className="btn-secondary" title="Copy email address" type="button">
                 {copied ? <Check size={18} style={{ color: 'var(--accent-emerald)' }} /> : <Copy size={18} />}
                 <span>{copied ? 'Email Copied!' : 'Copy Email'}</span>
               </button>
@@ -245,6 +251,7 @@ export const Hero: React.FC = () => {
                   {(['profile', 'stack', 'status'] as const).map((tab) => (
                     <button
                       key={tab}
+                      type="button"
                       onClick={() => setTerminalTab(tab)}
                       style={{
                         padding: '3px 10px',
@@ -414,5 +421,5 @@ export const Hero: React.FC = () => {
         }
       `}</style>
     </section>
-  )
-}
+  );
+};
