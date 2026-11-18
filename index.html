@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xabibullo Shamsiddinov | Game Developer Portfolio</title>
+    <meta name="description" content="Xabibullo Shamsiddinov — Junior Game Developer. Godot 4 va Unity 6 da qilingan 3D o'yinlar: Night Tashkent, Rocket Boost, Neon Rails, Choyhona Simulator. Brauzerda o'ynasa bo'ladi.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="content-wrapper">
+
+        <!-- NAVIGATION -->
+        <header class="navbar">
+            <div class="container nav-container">
+                <a href="#hero" class="nav-brand">
+                    <div class="brand-icon">XS</div>
+                    <div>
+                        <span class="brand-title">Xabibullo</span>
+                        <span class="brand-tag">GAME DEV</span>
+                    </div>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="#projects" class="nav-link">O'yinlar</a></li>
+                    <li><a href="#play" class="nav-link">O'ynash</a></li>
+                    <li><a href="#art" class="nav-link">3D ishlar</a></li>
+                    <li><a href="#skills" class="nav-link">Ko'nikmalar</a></li>
+                    <li><a href="#experience" class="nav-link">Yo'l</a></li>
+                    <li><a href="#contact" class="nav-link">Aloqa</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button id="sound-toggle" class="btn-sound" title="8-bit ovoz effektlarini yoqish/o'chirish">
+                        <span>🔊</span> <span>Ovoz: ON</span>
+                    </button>
+                    <a href="#contact" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
+                        <span>Bog'lanish</span>
+                    </a>
+                    <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Menyu">☰</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- HERO -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        <span>Junior Game Developer · Ish va amaliyot uchun ochiq</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Xabibullo Shamsiddinov<br>
+                        <span class="hero-title-highlight">Godot va Unity'da 3D o'yinlar</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Haqiqiy Toshkent bo'ylab mashina simulyatori, 100 darajali raketa o'yini, endless runner va choyhona tycoon'ini
+                        g'oyadan Android APK va web build'gacha olib bordim. Python bilan pipeline yozaman (OpenStreetMap shahar,
+                        daraja generatori, Blender skriptlari) va AI agentlar bilan tez ishlayman: vazifani aniq yozaman,
+                        natijani test va skrinshot bilan tekshiraman.
+                    </p>
+
+                    <div class="hero-engine-pills">
+                        <span class="engine-pill godot">
+                            <span>🤖</span> <strong>Godot 4.6</strong> (GDScript)
+                        </span>
+                        <span class="engine-pill unity">
+                            <span>⚡</span> <strong>Unity 6</strong> (C# / URP)
+                        </span>
+                        <span class="engine-pill">
+                            <span>🐍</span> <strong>Python</strong> tooling
+                        </span>
+                        <span class="engine-pill">
+                            <span>🧊</span> <strong>Blender</strong> · Sketchfab
+                        </span>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>🕹️ O'yinlarni ko'rish</span>
+                        </a>
+                        <a href="#play" class="btn btn-arcade">
+                            <span>▶ Brauzerda o'ynash</span>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>✉️ Bog'lanish</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="dev-avatar-card">
+                        <div class="hero-shot">
+                            <img src="assets/images/night-tashkent/street.jpg" alt="Night Tashkent o'yinidan skrinshot">
+                            <span class="hero-shot-label">Night Tashkent · Godot 4.6</span>
+                        </div>
+                        <div class="dev-card-info">
+                            <h3 class="dev-card-name">Xabibullo Shamsiddinov</h3>
+                            <p class="dev-card-role">&lt;Gameplay &amp; Tools Programmer /&gt;</p>
+                            <div class="dev-card-stats">
+                                <div class="stat-item">
+                                    <div class="stat-val">7</div>
+                                    <div class="stat-lbl">O'yin loyihasi</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-val">100</div>
+                                    <div class="stat-lbl">Daraja (Rocket Boost)</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-val">2</div>
+                                    <div class="stat-lbl">Dvijok</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-val">3</div>
+                                    <div class="stat-lbl">Platforma</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS STRIP -->
+        <section class="stats-strip">
+            <div class="container">
+                <div class="stats-grid">
+                    <div>
+                        <div class="stat-box-val">3 240</div>
+                        <div class="stat-box-lbl">Toshkent chunklari (OSM)</div>
+                    </div>
+                    <div>
+                        <div class="stat-box-val">19</div>
+                        <div class="stat-box-lbl">Sketchfab mashinasi o'yinda</div>
+                    </div>
+                    <div>
+                        <div class="stat-box-val">2</div>
+                        <div class="stat-box-lbl">O'yin brauzerda o'ynaladi</div>
+                    </div>
+                    <div>
+                        <div class="stat-box-val">uz · en · ru</div>
+                        <div class="stat-box-lbl">Lokalizatsiya</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Mening ishlarim</span>
+                    <h2 class="section-title">O'yin loyihalari</h2>
+                    <p class="section-desc">
+                        Hamma rasmlar o'yinlarning o'zidan olingan. "Batafsil" tugmasida galereya, mexanikalar,
+                        hal qilingan texnik muammo va loyihadan olingan haqiqiy kod parchasi bor.
+                    </p>
+                </div>
+
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all">Hammasi</button>
+                    <button class="filter-btn" data-filter="godot">🤖 Godot</button>
+                    <button class="filter-btn" data-filter="unity">⚡ Unity</button>
+                    <button class="filter-btn" data-filter="mobile">📱 Android</button>
+                    <button class="filter-btn" data-filter="web">▶ Brauzerda o'ynaladi</button>
+                </div>
+
+                <div id="projects-grid" class="projects-grid"></div>
+            </div>
+        </section>
+
+        <!-- PLAY IN BROWSER -->
+        <section id="play" class="minigame-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Hoziroq sinab ko'ring</span>
+                    <h2 class="section-title">▶ Brauzerda o'ynash</h2>
+                    <p class="section-desc">
+                        Ikkala o'yin Godot'dan Web (WebAssembly) qilib eksport qilingan. Birinchi yuklanish ~45 MB.
+                        Kompyuterda klaviatura, telefonda sensor bilan o'ynaladi.
+                    </p>
+                </div>
+
+                <div class="play-grid">
+                    <div class="play-card">
+                        <img src="assets/images/rocket-boost/level.jpg" alt="Rocket Boost" class="play-cover">
+                        <div class="play-body">
+                            <h3>🚀 Rocket Boost</h3>
+                            <p>Raketani maydonchaga sekin va tik qo'ndiring. 100 daraja, Space Guardians va Rocket Race rejimlari.</p>
+                            <div class="play-keys">
+                                <span class="ctrl-badge">Space / ↑</span> dvigatel
+                                <span class="ctrl-badge">A D / ← →</span> burilish
+                                <span class="ctrl-badge">R</span> qayta
+                            </div>
+                            <button class="btn btn-primary btn-play" data-game="games/rocket-boost/index.html" data-title="Rocket Boost">
+                                <span>▶ O'ynash</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="play-card">
+                        <img src="assets/images/neon-rails/versus.jpg" alt="Neon Rails" class="play-cover">
+                        <div class="play-body">
+                            <h3>🏙️ Neon Rails</h3>
+                            <p>Endless runner: poyezd va to'siqlardan qoching. Menyudagi 2 PLAYERS — bitta klaviaturada ikki kishilik poyga.</p>
+                            <div class="play-keys">
+                                <span class="ctrl-badge">A D</span> yo'lak
+                                <span class="ctrl-badge">W / Space</span> sakrash
+                                <span class="ctrl-badge">S</span> yumalash
+                            </div>
+                            <button class="btn btn-primary btn-play" data-game="games/neon-rails/index.html" data-title="Neon Rails">
+                                <span>▶ O'ynash</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <p id="file-warning" class="file-warning" hidden>
+                    ⚠️ Sahifa fayl sifatida (file://) ochilgan. Godot web o'yinlari faqat server orqali ishlaydi:
+                    papkada <code>python -m http.server 8000</code> ni ishga tushirib, <code>http://localhost:8000</code> ni oching
+                    (GitHub Pages'da o'zi ishlaydi).
+                </p>
+
+                <div class="arcade-cabinet" id="minigame" style="margin-top: 48px;">
+                    <div class="arcade-top-bar">
+                        <div class="arcade-lights">
+                            <span class="arcade-light light-red"></span>
+                            <span class="arcade-light light-yellow"></span>
+                            <span class="arcade-light light-green"></span>
+                        </div>
+                        <div class="arcade-title">BONUS · BUG BLASTER (HTML5 CANVAS, SHU SAHIFADA YOZILGAN)</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-emerald);">● READY</div>
+                    </div>
+                    <div class="arcade-screen-wrapper">
+                        <canvas id="minigame-canvas"></canvas>
+                    </div>
+                    <div class="arcade-controls-guide">
+                        <div>🎮 Boshqaruv: <span class="ctrl-badge">W, A, S, D</span> yoki <span class="ctrl-badge">Strelkalar</span></div>
+                        <div>⚡ O'q otish: <span class="ctrl-badge">SPACE</span> yoki <span class="ctrl-badge">Sichqoncha / Sensor</span></div>
+                        <div>☕ Bonus: qahva triple-shot beradi</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3D ART -->
+        <section id="art" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Blender · Sketchfab</span>
+                    <h2 class="section-title">3D modellar va asset pipeline</h2>
+                    <p class="section-desc">
+                        Modellarni qo'lda emas, Blender Python skriptlari bilan quraman: skriptni o'zgartirib qayta ishga tushirsam,
+                        model qaytadan yasaladi. Tayyor modellarni (Sketchfab) esa konvertor orqali o'yinga olaman va litsenziyasini yozib boraman.
+                    </p>
+                </div>
+                <div id="art-grid" class="art-grid"></div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Texnologiyalar</span>
+                    <h2 class="section-title">Ko'nikmalar va qayerda ishlatganim</h2>
+                    <p class="section-desc">
+                        Foizlar o'rniga har bir ko'nikma yonida u ishlatilgan loyiha yozilgan.
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <div class="skill-cat-icon">🎮</div>
+                            <h3 class="skill-cat-title">Dvijoklar</h3>
+                        </div>
+                        <ul class="skill-items-list">
+                            <li class="skill-row"><span class="skill-name">Godot 4.6 — 3D, Jolt Physics, Forward+/Mobile</span><span class="skill-evidence">Night Tashkent, Rocket Boost, Neon Rails, Choyhona, Avatar</span></li>
+                            <li class="skill-row"><span class="skill-name">Unity 6 — URP, Input System, UI Toolkit</span><span class="skill-evidence">MarsGo, Bunker</span></li>
+                            <li class="skill-row"><span class="skill-name">Eksport: Android (Gradle, imzolangan APK), Web/WASM</span><span class="skill-evidence">Rocket Boost, Neon Rails</span></li>
+                            <li class="skill-row"><span class="skill-name">Shaderlar va VFX: zarrachalar, alanga, fog, curved world</span><span class="skill-evidence">Rocket Boost, Neon Rails, Avatar</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <div class="skill-cat-icon">💻</div>
+                            <h3 class="skill-cat-title">Tillar</h3>
+                        </div>
+                        <ul class="skill-items-list">
+                            <li class="skill-row"><span class="skill-name">GDScript 2.0 — statik tiplar, signallar, @export, Resource</span><span class="skill-evidence">hamma Godot loyihalari</span></li>
+                            <li class="skill-row"><span class="skill-name">C# — interfeyslar, eventlar, editor skriptlari</span><span class="skill-evidence">MarsGo, Bunker</span></li>
+                            <li class="skill-row"><span class="skill-name">Python — ma'lumot pipeline, generatorlar, Blender API</span><span class="skill-evidence">OSM shahar, daraja generatori, mashina konvertori, rig skriptlari</span></li>
+                            <li class="skill-row"><span class="skill-name">HTML/CSS/JS</span><span class="skill-evidence">shu portfolio va undagi Canvas o'yini</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <div class="skill-cat-icon">⚙️</div>
+                            <h3 class="skill-cat-title">Gameplay arxitekturasi</h3>
+                        </div>
+                        <ul class="skill-items-list">
+                            <li class="skill-row"><span class="skill-name">State machine, object pool, event bus</span><span class="skill-evidence">Neon Rails</span></li>
+                            <li class="skill-row"><span class="skill-name">Data-driven dizayn: .tres / LevelDef, protsedural darajalar</span><span class="skill-evidence">Rocket Boost, MarsGo, Neon Rails</span></li>
+                            <li class="skill-row"><span class="skill-name">Streaming va fon oqimlari (WorkerThreadPool)</span><span class="skill-evidence">Night Tashkent</span></li>
+                            <li class="skill-row"><span class="skill-name">Save versiyalash va migratsiya, lokalizatsiya</span><span class="skill-evidence">Choyhona, Rocket Boost</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <div class="skill-cat-icon">🛠️</div>
+                            <h3 class="skill-cat-title">Asboblar va ish usuli</h3>
+                        </div>
+                        <ul class="skill-items-list">
+                            <li class="skill-row"><span class="skill-name">AI yordamida dasturlash (Claude Code, parallel agentlar)</span><span class="skill-evidence">spetsifikatsiya → kod → test → skrinshot bilan tekshirish</span></li>
+                            <li class="skill-row"><span class="skill-name">Avtomatik testlar: headless test, bot soak, skrinshot tool'lar</span><span class="skill-evidence">Rocket Boost, Neon Rails, Choyhona, MarsGo</span></li>
+                            <li class="skill-row"><span class="skill-name">Blender 5.2, Sketchfab, glb/FBX eksport, LOD</span><span class="skill-evidence">3D ishlar bo'limi</span></li>
+                            <li class="skill-row"><span class="skill-name">Git, Linux server (Ubuntu, VirtualBox, netplan, systemd)</span><span class="skill-evidence">loyihalar repo'lari, universitetdagi System Administration kursi</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIMELINE -->
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Yo'l</span>
+                    <h2 class="section-title">Qanday o'sib boryapman</h2>
+                    <p class="section-desc">Hamma sanalar loyiha fayllari va commit tarixidan olingan.</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026-yil noyabr</div>
+                            <h3 class="timeline-title">Neon Rails, Choyhona Simulator, Avatar arena, Bunker</h3>
+                            <p class="timeline-desc">
+                                Endless runner'ga 2 o'yinchilik poyga rejimi qo'shildi va web'ga chiqarildi. Choyhona'da 5 ta choyhona va save migratsiyasi,
+                                Avatar'da 16 ta element qobiliyati, Unity'da Bunker uchun UI Toolkit menyu/lobby kit'i va Blender'da bunker ombori.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026-yil 20-oktyabr – hozir</div>
+                            <h3 class="timeline-title">Night Tashkent</h3>
+                            <p class="timeline-desc">
+                                OpenStreetMap'dan haqiqiy Toshkentni quradigan Python pipeline, chunk streaming, mashina fizikasi, ko'priklar,
+                                landmarklar va Sketchfab mashinalari. Mashina uchun sedanni Blender'da skript bilan yasadim.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026-yil 16-oktyabr</div>
+                            <h3 class="timeline-title">Unity'ga o'tish: MarsGo va hazmat personaj</h3>
+                            <p class="timeline-desc">
+                                Godot'dagi raketa o'yinini Unity 6 + URP'ga ko'chirib, ikki dvijokni solishtirdim. Blender'da protsedural personaj yasab, FBX qilib Unity'ga oldim.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026-yil 15–27-oktyabr</div>
+                            <h3 class="timeline-title">Rocket Boost — birinchi to'liq o'yin</h3>
+                            <p class="timeline-desc">
+                                Bitta prototipdan 100 darajali o'yinga: generator, 7 raketa, 2 qo'shimcha rejim, AdMob, imzolangan Android APK, Yandex Games uchun web build va uch tilga tarjima.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026 · o'qish</div>
+                            <h3 class="timeline-title">Talaba, IT-203-25 guruhi</h3>
+                            <p class="timeline-desc">
+                                System Administration kursi: VirtualBox'da Ubuntu Server, foydalanuvchilar va huquqlar, paketlar, systemd, tarmoq (netplan, statik IP, /etc/hosts).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-card contact-card-single">
+                    <div class="contact-info">
+                        <h2 class="contact-info-title">Birga o'yin qilamizmi? 🚀</h2>
+                        <p class="contact-info-desc">
+                            Junior game developer, gameplay yoki tools programmer sifatida jamoaga qo'shilishga tayyorman.
+                            Kod, build yoki loyihalar haqida savol bo'lsa, quyidagi havolalar orqali yozing.
+                        </p>
+                        <div id="social-links" class="social-links-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="footer-quote">// "Avval o'ynaladigan qil, keyin chiroyli qil."</p>
+                <p>© 2026 Xabibullo Shamsiddinov. Xarita ma'lumotlari © OpenStreetMap contributors. Uchinchi tomon modellari mualliflariga tegishli.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- PROJECT MODAL -->
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div>
+                    <h2 id="modal-title" style="font-size: 1.6rem; font-weight: 800; margin-bottom: 4px;">O'yin nomi</h2>
+                    <p id="modal-tagline" style="color: var(--primary); font-family: var(--font-mono); font-size: 0.9rem;">Qisqacha</p>
+                </div>
+                <button id="modal-close" class="modal-close-btn" title="Yopish">✕</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <img id="modal-gallery-main" src="" alt="">
+                    <p id="modal-gallery-caption" class="gallery-caption"></p>
+                    <div id="modal-gallery-thumbs" class="gallery-thumbs"></div>
+                </div>
+
+                <div class="modal-tabs">
+                    <button class="modal-tab-btn active" data-tab="overview">Umumiy</button>
+                    <button class="modal-tab-btn" data-tab="mechanics">Mexanikalar</button>
+                    <button class="modal-tab-btn" data-tab="challenge">Muammo va kod</button>
+                </div>
+
+                <div id="tab-overview" class="tab-pane active">
+                    <div class="modal-facts">
+                        <div class="modal-fact"><span>DVIJOK</span><strong id="modal-engine">Godot</strong></div>
+                        <div class="modal-fact"><span>ROL</span><strong id="modal-role">Solo</strong></div>
+                        <div class="modal-fact"><span>VAQT</span><strong id="modal-duration">1 oy</strong></div>
+                        <div class="modal-fact"><span>HOLAT</span><strong id="modal-status">—</strong></div>
+                    </div>
+                    <div id="modal-metrics" class="modal-metrics"></div>
+
+                    <h4 style="margin-bottom: 8px; color: var(--primary);">Loyiha haqida:</h4>
+                    <p id="modal-full-desc" style="color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;"></p>
+                    <p id="modal-note" class="modal-note" hidden></p>
+
+                    <div id="modal-actions" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;"></div>
+                </div>
+
+                <div id="tab-mechanics" class="tab-pane">
+                    <h4 style="margin-bottom: 12px; color: var(--primary);">Qilingan asosiy tizimlar:</h4>
+                    <ul id="modal-mechanics" style="list-style: none; margin-bottom: 20px;"></ul>
+                    <div id="modal-tags" class="card-tags"></div>
+                </div>
+
+                <div id="tab-challenge" class="tab-pane">
+                    <div class="challenge-box">
+                        <div class="challenge-title">⚠️ Muammo:</div>
+                        <p id="modal-challenge-prob" style="font-size: 0.92rem; color: var(--text-main); margin-bottom: 12px;"></p>
+                        <div class="challenge-title" style="color: var(--accent-emerald);">💡 Yechim:</div>
+                        <p id="modal-challenge-sol" style="font-size: 0.92rem; color: var(--text-main);"></p>
+                    </div>
+                    <h4 style="margin-bottom: 8px; color: var(--primary);">Loyihadan kod: <span id="modal-code-source" class="code-source"></span></h4>
+                    <pre class="code-block-wrapper"><code id="modal-code"></code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GAME PLAYER OVERLAY -->
+    <div id="game-overlay" class="modal-overlay">
+        <div class="game-frame-wrap">
+            <div class="game-frame-bar">
+                <strong id="game-title">O'yin</strong>
+                <div style="display:flex; gap:8px;">
+                    <a id="game-newtab" href="#" target="_blank" class="card-btn card-btn-ghost">↗ Yangi oynada</a>
+                    <button id="game-close" class="modal-close-btn" title="Yopish">✕</button>
+                </div>
+            </div>
+            <iframe id="game-frame" title="O'yin" allow="autoplay; fullscreen; gamepad"></iframe>
+        </div>
+    </div>
+
+    <script src="js/audio.js"></script>
+    <script src="js/projects-data.js"></script>
+    <script src="js/mini-game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
