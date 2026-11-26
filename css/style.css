@@ -1450,3 +1450,118 @@ body {
     .timeline { padding-left: 0; }
     .code-block-wrapper { font-size: 0.72rem; }
 }
+
+/* ==========================================================================
+   v2: language switch, profile photo, status groups, learning list, a11y
+   ========================================================================== */
+.modal-overlay[hidden] { display: none !important; }
+
+.lang-switch {
+    display: inline-flex; border: 1px solid var(--border-color); border-radius: var(--radius-full);
+    overflow: hidden; background: rgba(255, 255, 255, 0.03);
+}
+.lang-btn {
+    background: transparent; border: 0; color: var(--text-muted); font-family: var(--font-mono);
+    font-size: 0.75rem; font-weight: 700; padding: 6px 10px; cursor: pointer; transition: var(--transition);
+}
+.lang-btn:hover { color: var(--text-main); }
+.lang-btn.active { background: var(--primary); color: #001018; }
+
+/* hero profile card */
+.profile-photo {
+    margin: -24px -24px 18px; aspect-ratio: 1 / 1; overflow: hidden;
+    border-bottom: 1px solid var(--border-glow); background: #e9e9e9;
+}
+.profile-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; display: block; }
+.dev-card-role { margin-bottom: 10px; }
+.dev-card-meta { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 4px; }
+.dev-card-meta:last-of-type { margin-bottom: 14px; }
+.dev-card-stats { grid-template-columns: repeat(4, 1fr); }
+
+/* project groups */
+.project-group { margin-bottom: 56px; }
+.group-title {
+    font-size: 1.25rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+    padding-bottom: 10px; border-bottom: 1px solid var(--border-color);
+}
+.group-count {
+    font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary);
+    border: 1px solid var(--border-glow); border-radius: var(--radius-full); padding: 1px 9px;
+}
+.empty-note { text-align: center; color: var(--text-muted); padding: 40px; }
+.card-badge-status.status-released { color: var(--accent-emerald); border-color: rgba(0, 255, 157, 0.4); }
+.card-badge-status.status-wip { color: var(--accent-amber); }
+.card-badge-status.status-prototype { color: #c4a7ff; border-color: rgba(196, 167, 255, 0.4); }
+.card-banner-img:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
+
+/* small & learning projects */
+.learning-block { margin-top: 8px; }
+.learning-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.learning-item {
+    background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md);
+    padding: 16px 18px; display: flex; flex-direction: column; gap: 6px;
+}
+.learning-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.learning-kind {
+    font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);
+    border: 1px solid var(--border-color); border-radius: var(--radius-full); padding: 1px 8px; white-space: nowrap;
+}
+.learning-engine { font-family: var(--font-mono); font-size: 0.72rem; color: var(--primary); }
+.learning-item p { color: var(--text-muted); font-size: 0.86rem; line-height: 1.55; }
+.learning-link { font-size: 0.82rem; color: var(--accent-emerald); text-decoration: none; margin-top: auto; }
+.learning-link:hover { text-decoration: underline; }
+
+/* play section */
+.play-note { margin-top: 18px; color: var(--text-dim); font-size: 0.85rem; text-align: center; }
+#minigame { margin-top: 48px; }
+.arcade-ready { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-emerald); }
+#minigame-canvas:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+/* modal (inline styles moved here) */
+.modal-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 4px; }
+.modal-tagline { color: var(--primary); font-family: var(--font-mono); font-size: 0.9rem; }
+.modal-h4 { margin-bottom: 8px; color: var(--primary); }
+.modal-full-desc { color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+.modal-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+.modal-mechanics { list-style: none; margin-bottom: 20px; }
+.modal-mechanics li { margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px; }
+.modal-mechanics .check { color: var(--accent-emerald); }
+.challenge-text { font-size: 0.92rem; color: var(--text-main); margin-bottom: 12px; }
+.challenge-title-ok { color: var(--accent-emerald); }
+.gallery-thumb {
+    padding: 0; border: 2px solid transparent; border-radius: var(--radius-sm); background: none;
+    cursor: pointer; flex-shrink: 0; opacity: 0.6; transition: var(--transition); line-height: 0;
+}
+.gallery-thumb img { width: 96px; height: 54px; object-fit: cover; border-radius: 4px; display: block; border: 0; opacity: 1; }
+.gallery-thumb:hover { opacity: 0.9; }
+.gallery-thumb.active { border-color: var(--primary); opacity: 1; }
+.game-frame-actions { display: flex; gap: 8px; }
+
+/* contact */
+.contact-photo {
+    width: 96px; height: 96px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 18px;
+    border: 2px solid var(--primary); box-shadow: 0 0 24px var(--primary-glow);
+}
+.social-btn { text-align: left; }
+.social-icon { font-size: 1.2rem; }
+.social-text { display: flex; flex-direction: column; line-height: 1.25; }
+.social-label { font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+.social-value { font-size: 0.9rem; color: var(--text-main); font-weight: 600; word-break: break-all; }
+.contact-meta { margin-top: 22px; color: var(--text-muted); font-size: 0.88rem; }
+
+/* keyboard focus */
+a:focus-visible, button:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+@media (max-width: 768px) {
+    .dev-card-stats { grid-template-columns: repeat(2, 1fr); }
+    .learning-grid { grid-template-columns: minmax(0, 1fr); }
+    .nav-actions { gap: 8px; }
+    .lang-btn { padding: 6px 8px; }
+}
+@media (max-width: 480px) {
+    .brand-tag { display: none; }
+}

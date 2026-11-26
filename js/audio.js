@@ -2,7 +2,8 @@
 class SoundFX {
     constructor() {
         this.ctx = null;
-        this.enabled = localStorage.getItem('gamedev_sound_enabled') !== 'false';
+        // Off by default: visitors (recruiters) opt in with the Sound button.
+        this.enabled = localStorage.getItem('gamedev_sound_enabled') === 'true';
     }
 
     init() {

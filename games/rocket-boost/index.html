@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-		<title>star wars by rocket</title>
+		<title>Rocket Boost</title>
 		<style>
 html, body, #canvas {
 	margin: 0;
@@ -109,9 +109,13 @@ body {
 			<div id="status-notice"></div>
 		</div>
 
-		<script src="index.js"></script>
+		<script src="../engine/index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":8339264,"index.wasm":37700666},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"../engine/index","experimentalVK":false,"fileSizes":{"index.pck":8339264,"../engine/index.wasm":37700666},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4,"mainPack":"index.pck"};
+// Keep the tab title (the engine renames it to the project name at start).
+const GAME_TITLE = "Rocket Boost";
+new MutationObserver(() => { if (document.title !== GAME_TITLE) document.title = GAME_TITLE; })
+	.observe(document.querySelector('title'), { childList: true, characterData: true, subtree: true });
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 

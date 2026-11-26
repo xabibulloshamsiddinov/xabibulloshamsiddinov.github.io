@@ -1,31 +1,38 @@
 # Xabibullo Shamsiddinov — Game Developer Portfolio
 
-Godot 4.6 va Unity 6 da qilingan 7 ta haqiqiy loyiha, 3D/Blender ishlari va brauzerda o'ynaladigan 2 ta o'yin.
-Hamma rasmlar o'yinlarning o'zidan olingan, kod parchalari loyiha fayllaridan ko'chirilgan.
+**Sayt:** https://xabibulloshamsiddinov.github.io/ (inglizcha: `?lang=en`, o'zbekcha: `?lang=uz`)
+
+Godot 4.6 va Unity 6 da qilingan 10 ta o'yin loyihasi, kichik/o'quv loyihalari, 3D/Blender ishlari
+va brauzerda o'ynaladigan 3 ta o'yin (Rocket Boost, Samurai: Sakura Path, Neon Rails). Sayt ikki tilda (UZ / EN).
 
 ## Ichida nima bor
 
 | Bo'lim | Mazmuni |
 |---|---|
-| O'yinlar | Night Tashkent, Rocket Boost, Neon Rails, Choyhona Simulator, Avatar: Elemental Arena, MarsGo, Bunker. Har birida galereya, mexanikalar, hal qilingan muammo va haqiqiy kod |
-| Brauzerda o'ynash | `games/rocket-boost` va `games/neon-rails` — Godot Web (WASM) build'lari, iframe'da ochiladi |
-| 3D ishlar | Blender Python skriptlari bilan qilingan sedan, SUV, hazmat personaj, Zaher, bunker ombori; Sketchfab → Godot pipeline |
-| Ko'nikmalar | foizlar o'rniga har ko'nikma qaysi loyihada ishlatilgani |
-| Yo'l | sanalar loyiha fayllari va commit tarixidan |
-| Bonus | sahifaning o'zida yozilgan "Bug Blaster" HTML5 Canvas o'yini |
+| O'yinlar | Holat bo'yicha guruhlangan: **tugallangan** (Rocket Boost, Samurai, Team Shooter, Neon Rails), **ishlab chiqilmoqda** (Night Tashkent, Jura Rush, Choyhona, Bunker), **prototiplar** (MarsGo, Elemental Arena). Filtr: Godot / Unity / brauzerda / multiplayer. Har birida galereya, mexanikalar, hal qilingan muammo va loyihadan kod |
+| Kichik va o'quv loyihalari | Ashen Oaths, Rocket Boost (Unity), Obstacle Dodge, Kitchen Chaos, Unity City Demo, Top-down Shooter |
+| Brauzerda o'ynash | `games/*` — Godot Web (WASM) build'lari, iframe'da ochiladi |
+| 3D ishlar | Blender Python skriptlari bilan sedan, SUV, hazmat personaj, Zaher, bunker ombori; Sketchfab → Godot pipeline |
+| Ko'nikmalar, Yo'l, Aloqa | ko'nikma qaysi loyihada ishlatilgani; sanalar commit tarixidan; email, telefon, LinkedIn, GitHub |
 
 ## Tuzilishi
 
 ```text
-index.html            sahifa
-css/style.css         uslublar
-js/projects-data.js   HAMMA MA'LUMOT: loyihalar (PROJECTS_DATA), 3D ishlar (ART_DATA), profil (DEVELOPER_PROFILE)
-js/main.js            kartalar, modal + galereya, o'yin oynasi, filtrlar
-js/mini-game.js       Bug Blaster
-js/audio.js           8-bit ovozlar (Web Audio API)
-assets/images/<loyiha>/   skrinshot va renderlar (1280px JPG)
-games/<o'yin>/        Godot Web eksportlari (single-thread, maxsus header kerak emas)
+index.html               sahifa (matnlar JS orqali tanlangan tilda to'ldiriladi)
+css/style.css            uslublar
+js/content.js            interfeys matnlari (UI_TEXT), ko'nikmalar, "Yo'l" bo'limi — {uz, en}
+js/projects-data.js      loyihalar (PROJECTS_DATA), o'quv loyihalari (LEARNING_DATA), 3D ishlar (ART_DATA), profil
+js/main.js               til, kartalar va guruhlar, modal, o'yin oynasi, fon animatsiyasi
+js/mini-game.js          Bug Blaster (delta time, klaviatura/sichqoncha/sensor)
+js/audio.js              8-bit ovozlar (Web Audio API), sukut bo'yicha o'chiq
+assets/images/<loyiha>/  skrinshot va renderlar; profile/ — surat; og-cover.jpg — havola preview'i
+games/engine/            UMUMIY Godot 4.6.3 web dvijogi (index.wasm, index.js, worklet'lar)
+games/<o'yin>/           har o'yinning index.html + index.pck (+ ikonkalar)
 ```
+
+Uchala o'yin bitta `games/engine/index.wasm` (~38 MB) ni ishlatadi: brauzer uni bir marta yuklab keshlaydi,
+keyingi o'yin faqat o'z `.pck` faylini (1–8 MB) yuklaydi. Har bir `games/<o'yin>/index.html` dagi `GODOT_CONFIG` da
+`"executable":"../engine/index"` va `"mainPack":"index.pck"` turadi.
 
 ## Ishga tushirish
 
@@ -36,32 +43,35 @@ python -m http.server 8000
 # keyin brauzerda: http://localhost:8000
 ```
 
-## Internetga joylash (GitHub Pages)
+## Web build'ni yangilash
 
-1. GitHub'da `portfolio` (yoki `xabibulloshamsiddinov.github.io`) repo oching va shu papkani push qiling.
-2. Settings → Pages → Branch: `main`, papka: `/ (root)`.
-3. Sayt: `https://xabibulloshamsiddinov.github.io/portfolio/`.
+Dvijok versiyasi **4.6.3** bo'lib qolsa, faqat `.pck` ni almashtirish kifoya (Web export template ham kerak emas):
 
-`index.wasm` fayllari ~36 MB — GitHub'ning 100 MB fayl chegarasidan kichik, LFS kerak emas.
+```bash
+Godot_v4.6.3-stable_win64.exe --headless --path <loyiha> --export-pack "Web" <bu papka>/games/<o'yin>/index.pck
+```
+
+Keyin `games/<o'yin>/index.html` dagi `fileSizes` → `"index.pck"` qiymatini yangi fayl hajmiga to'g'rilang.
+Godot versiyasi o'zgarsa: to'liq Web eksport qiling, `index.wasm`, `index.js` va ikkala `*.worklet.js` ni
+`games/engine/` ga ko'chiring va hamma o'yinlarning `.pck` larini o'sha versiyada qayta eksport qiling.
 
 ## Yangilash
 
 - **Kontaktlar:** `js/projects-data.js` → `DEVELOPER_PROFILE.socials`. Bo'sh qoldirilganlari saytda ko'rinmaydi.
-- **Yangi loyiha:** `PROJECTS_DATA` ga obyekt qo'shing (`cover`, `gallery`, `metrics`, `mechanics`, `technicalChallenge`,
-  `codeSource`, `codeSnippet`, `links.play` / `links.github`). Rasmlarni `assets/images/<id>/` ga qo'ying.
-- **Rocket Boost web build'ini yangilash:**
-  `Godot_v4.6.3-stable_win64.exe --path <star-wars-by-rocket> --headless --export-release "Web" <bu papka>/games/rocket-boost/index.html`
-- **Neon Rails:** `godot --headless --path <finding-wall-e> --export-release "Web" build/web/index.html`, keyin `build/web/*` ni `games/neon-rails/` ga nusxalang.
+- **Yangi loyiha:** `PROJECTS_DATA` ga obyekt qo'shing (`status`: `released` / `wip` / `prototype`; matnlar `{ uz, en }`).
+  Rasmlarni `assets/images/<id>/` ga qo'ying.
+- **Matnlar:** `js/content.js` → `UI_TEXT`.
 
 ## Litsenziya eslatmalari
 
 - Xarita ma'lumotlari © OpenStreetMap contributors (ODbL).
 - Night Tashkent mashinalari Sketchfab'dan (Q.SARDOR, own.guest, Ddiaz Design); litsenziyalar loyihadagi `assets/cars/CREDITS.md` da.
-- Avatar: Elemental Arena — notijoriy fan-prototip, personajlar Nickelodeon'ga tegishli.
+- Team Shooter: qurollar Aligned Games, askarlar buh (Sketchfab, CC-BY 4.0); Poly Haven (CC0); Kenney (CC0); Vincent Sevedge (CC-BY 3.0).
+- Elemental Arena — Avatar: The Last Airbender asosidagi notijoriy o'quv prototipi, personajlar Nickelodeon'ga tegishli.
 
 ## Keyingi qadamlar
 
-- [ ] itch.io / LinkedIn / Telegram / email havolalarini qo'shish
-- [ ] Har bir o'yinga 5–10 soniyalik gameplay GIF yoki video
-- [ ] Rezyume PDF tugmasi
-- [ ] Night Tashkent va Choyhona uchun web yoki APK yuklab olish havolasi
+- [ ] Har bir o'yinga 20–30 soniyalik gameplay video (YouTube) va saytga havola
+- [ ] Rezyume PDF va saytda "Rezyume" tugmasi
+- [ ] Rocket Boost APK / Yandex Games va Team Shooter Windows build'ini yuklab olish havolasi (GitHub Releases yoki itch.io)
+- [ ] Telegram va itch.io havolalari

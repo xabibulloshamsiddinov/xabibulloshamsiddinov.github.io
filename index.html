@@ -1,20 +1,36 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xabibullo Shamsiddinov | Game Developer Portfolio</title>
-    <meta name="description" content="Xabibullo Shamsiddinov — Junior Game Developer. Godot 4 va Unity 6 da qilingan 3D o'yinlar: Night Tashkent, Rocket Boost, Neon Rails, Choyhona Simulator. Brauzerda o'ynasa bo'ladi.">
+    <meta name="description" content="Xabibullo Shamsiddinov — game developer and game designer from Tashkent. 10 games in Godot 4 and Unity 6, 3 of them playable in the browser.">
+    <meta name="author" content="Xabibullo Shamsiddinov">
+    <link rel="canonical" href="https://xabibulloshamsiddinov.github.io/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xabibulloshamsiddinov.github.io/">
+    <meta property="og:title" content="Xabibullo Shamsiddinov — Game Developer Portfolio">
+    <meta property="og:description" content="10 games in Godot 4 and Unity 6: a LAN multiplayer FPS, a 100-level rocket game, a 2D platformer and a real Tashkent built from OpenStreetMap. 3 are playable in the browser.">
+    <meta property="og:image" content="https://xabibulloshamsiddinov.github.io/assets/images/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0a0d14">
+
+    <link rel="icon" type="image/png" href="assets/images/favicon-64.png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <canvas id="bg-canvas"></canvas>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
     <div class="content-wrapper">
 
@@ -30,22 +46,26 @@
                 </a>
 
                 <ul class="nav-links">
-                    <li><a href="#projects" class="nav-link">O'yinlar</a></li>
-                    <li><a href="#play" class="nav-link">O'ynash</a></li>
-                    <li><a href="#art" class="nav-link">3D ishlar</a></li>
-                    <li><a href="#skills" class="nav-link">Ko'nikmalar</a></li>
-                    <li><a href="#experience" class="nav-link">Yo'l</a></li>
-                    <li><a href="#contact" class="nav-link">Aloqa</a></li>
+                    <li><a href="#projects" class="nav-link" data-i18n="nav.games">Games</a></li>
+                    <li><a href="#play" class="nav-link" data-i18n="nav.play">Play</a></li>
+                    <li><a href="#art" class="nav-link" data-i18n="nav.art">3D art</a></li>
+                    <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+                    <li><a href="#experience" class="nav-link" data-i18n="nav.journey">Journey</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
                 </ul>
 
                 <div class="nav-actions">
-                    <button id="sound-toggle" class="btn-sound" title="8-bit ovoz effektlarini yoqish/o'chirish">
-                        <span>🔊</span> <span>Ovoz: ON</span>
+                    <div class="lang-switch" role="group" aria-label="Language">
+                        <button type="button" class="lang-btn" data-lang="uz">UZ</button>
+                        <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                    <button type="button" id="sound-toggle" class="btn-sound muted" data-i18n-title="sound.title">
+                        <span>🔇</span> <span>Sound: OFF</span>
                     </button>
-                    <a href="#contact" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
-                        <span>Bog'lanish</span>
+                    <a href="#contact" class="btn btn-primary nav-hire">
+                        <span data-i18n="nav.hire">Contact me</span>
                     </a>
-                    <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Menyu">☰</button>
+                    <button type="button" id="mobile-menu-toggle" class="mobile-menu-btn" data-i18n-aria="nav.menu" aria-expanded="false">☰</button>
                 </div>
             </div>
         </header>
@@ -56,75 +76,45 @@
                 <div class="hero-content">
                     <div class="status-badge">
                         <span class="status-dot"></span>
-                        <span>Junior Game Developer · Ish va amaliyot uchun ochiq</span>
+                        <span data-i18n="hero.badge">Student at Millat Umidi University · Open to jobs and internships</span>
                     </div>
 
                     <h1 class="hero-title">
                         Xabibullo Shamsiddinov<br>
-                        <span class="hero-title-highlight">Godot va Unity'da 3D o'yinlar</span>
+                        <span class="hero-title-highlight" data-i18n="hero.role">Game Developer · Game Designer</span>
                     </h1>
 
-                    <p class="hero-subtitle">
-                        Haqiqiy Toshkent bo'ylab mashina simulyatori, 100 darajali raketa o'yini, endless runner va choyhona tycoon'ini
-                        g'oyadan Android APK va web build'gacha olib bordim. Python bilan pipeline yozaman (OpenStreetMap shahar,
-                        daraja generatori, Blender skriptlari) va AI agentlar bilan tez ishlayman: vazifani aniq yozaman,
-                        natijani test va skrinshot bilan tekshiraman.
-                    </p>
+                    <p class="hero-subtitle" data-i18n="hero.sub"></p>
 
                     <div class="hero-engine-pills">
-                        <span class="engine-pill godot">
-                            <span>🤖</span> <strong>Godot 4.6</strong> (GDScript)
-                        </span>
-                        <span class="engine-pill unity">
-                            <span>⚡</span> <strong>Unity 6</strong> (C# / URP)
-                        </span>
-                        <span class="engine-pill">
-                            <span>🐍</span> <strong>Python</strong> tooling
-                        </span>
-                        <span class="engine-pill">
-                            <span>🧊</span> <strong>Blender</strong> · Sketchfab
-                        </span>
+                        <span class="engine-pill godot"><span>🤖</span> <strong>Godot 4.6</strong> (GDScript)</span>
+                        <span class="engine-pill unity"><span>⚡</span> <strong>Unity 6</strong> (C# / URP)</span>
+                        <span class="engine-pill"><span>🐍</span> <strong>Python</strong> tooling</span>
+                        <span class="engine-pill"><span>🧊</span> <strong>Blender</strong></span>
                     </div>
 
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">
-                            <span>🕹️ O'yinlarni ko'rish</span>
-                        </a>
-                        <a href="#play" class="btn btn-arcade">
-                            <span>▶ Brauzerda o'ynash</span>
-                        </a>
-                        <a href="#contact" class="btn btn-secondary">
-                            <span>✉️ Bog'lanish</span>
-                        </a>
+                        <a href="#projects" class="btn btn-primary"><span data-i18n="hero.cta.games">🕹️ See the games</span></a>
+                        <a href="#play" class="btn btn-arcade"><span data-i18n="hero.cta.play">▶ Play in the browser</span></a>
+                        <a href="#contact" class="btn btn-secondary"><span data-i18n="hero.cta.contact">✉️ Contact</span></a>
                     </div>
                 </div>
 
                 <div class="hero-visual">
                     <div class="dev-avatar-card">
-                        <div class="hero-shot">
-                            <img src="assets/images/night-tashkent/street.jpg" alt="Night Tashkent o'yinidan skrinshot">
-                            <span class="hero-shot-label">Night Tashkent · Godot 4.6</span>
+                        <div class="profile-photo">
+                            <img src="assets/images/profile/xabibullo.jpg" alt="Xabibullo Shamsiddinov" width="480" height="600">
                         </div>
                         <div class="dev-card-info">
-                            <h3 class="dev-card-name">Xabibullo Shamsiddinov</h3>
-                            <p class="dev-card-role">&lt;Gameplay &amp; Tools Programmer /&gt;</p>
+                            <h2 class="dev-card-name">Xabibullo Shamsiddinov</h2>
+                            <p class="dev-card-role">&lt;Game Developer /&gt;</p>
+                            <p class="dev-card-meta" data-i18n="card.location">📍 Tashkent, Uzbekistan</p>
+                            <p class="dev-card-meta" data-i18n="card.uni">🎓 Millat Umidi University</p>
                             <div class="dev-card-stats">
-                                <div class="stat-item">
-                                    <div class="stat-val">7</div>
-                                    <div class="stat-lbl">O'yin loyihasi</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-val">100</div>
-                                    <div class="stat-lbl">Daraja (Rocket Boost)</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-val">2</div>
-                                    <div class="stat-lbl">Dvijok</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-val">3</div>
-                                    <div class="stat-lbl">Platforma</div>
-                                </div>
+                                <div class="stat-item"><div class="stat-val">10</div><div class="stat-lbl" data-i18n="stat.games">Game projects</div></div>
+                                <div class="stat-item"><div class="stat-val">4</div><div class="stat-lbl" data-i18n="stat.done">Finished</div></div>
+                                <div class="stat-item"><div class="stat-val">3</div><div class="stat-lbl" data-i18n="stat.web">In browser</div></div>
+                                <div class="stat-item"><div class="stat-val">2</div><div class="stat-lbl" data-i18n="stat.engines">Engines</div></div>
                             </div>
                         </div>
                     </div>
@@ -136,22 +126,10 @@
         <section class="stats-strip">
             <div class="container">
                 <div class="stats-grid">
-                    <div>
-                        <div class="stat-box-val">3 240</div>
-                        <div class="stat-box-lbl">Toshkent chunklari (OSM)</div>
-                    </div>
-                    <div>
-                        <div class="stat-box-val">19</div>
-                        <div class="stat-box-lbl">Sketchfab mashinasi o'yinda</div>
-                    </div>
-                    <div>
-                        <div class="stat-box-val">2</div>
-                        <div class="stat-box-lbl">O'yin brauzerda o'ynaladi</div>
-                    </div>
-                    <div>
-                        <div class="stat-box-val">uz · en · ru</div>
-                        <div class="stat-box-lbl">Lokalizatsiya</div>
-                    </div>
+                    <div><div class="stat-box-val">3 240</div><div class="stat-box-lbl" data-i18n="strip.chunks">Tashkent chunks (OSM)</div></div>
+                    <div><div class="stat-box-val">100</div><div class="stat-box-lbl" data-i18n="strip.levels">Levels (Rocket Boost)</div></div>
+                    <div><div class="stat-box-val">12</div><div class="stat-box-lbl" data-i18n="strip.players">Players over LAN (Team Shooter)</div></div>
+                    <div><div class="stat-box-val">uz · en · ru</div><div class="stat-box-lbl" data-i18n="strip.langs">Localization</div></div>
                 </div>
             </div>
         </section>
@@ -160,23 +138,25 @@
         <section id="projects" class="projects-section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">Mening ishlarim</span>
-                    <h2 class="section-title">O'yin loyihalari</h2>
-                    <p class="section-desc">
-                        Hamma rasmlar o'yinlarning o'zidan olingan. "Batafsil" tugmasida galereya, mexanikalar,
-                        hal qilingan texnik muammo va loyihadan olingan haqiqiy kod parchasi bor.
-                    </p>
+                    <span class="section-tag" data-i18n="projects.tag">My work</span>
+                    <h2 class="section-title" data-i18n="projects.title">Game projects</h2>
+                    <p class="section-desc" data-i18n="projects.desc"></p>
                 </div>
 
                 <div class="filter-bar">
-                    <button class="filter-btn active" data-filter="all">Hammasi</button>
-                    <button class="filter-btn" data-filter="godot">🤖 Godot</button>
-                    <button class="filter-btn" data-filter="unity">⚡ Unity</button>
-                    <button class="filter-btn" data-filter="mobile">📱 Android</button>
-                    <button class="filter-btn" data-filter="web">▶ Brauzerda o'ynaladi</button>
+                    <button type="button" class="filter-btn active" data-filter="all" data-i18n="filter.all">All</button>
+                    <button type="button" class="filter-btn" data-filter="godot" data-i18n="filter.godot">🤖 Godot</button>
+                    <button type="button" class="filter-btn" data-filter="unity" data-i18n="filter.unity">⚡ Unity</button>
+                    <button type="button" class="filter-btn" data-filter="web" data-i18n="filter.web">▶ In browser</button>
+                    <button type="button" class="filter-btn" data-filter="multiplayer" data-i18n="filter.multiplayer">👥 Multiplayer</button>
                 </div>
 
-                <div id="projects-grid" class="projects-grid"></div>
+                <div id="projects-groups"></div>
+
+                <div class="learning-block">
+                    <h3 class="group-title" data-i18n="group.learning">📚 Small and learning projects</h3>
+                    <div id="learning-grid" class="learning-grid"></div>
+                </div>
             </div>
         </section>
 
@@ -184,69 +164,79 @@
         <section id="play" class="minigame-section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">Hoziroq sinab ko'ring</span>
-                    <h2 class="section-title">▶ Brauzerda o'ynash</h2>
-                    <p class="section-desc">
-                        Ikkala o'yin Godot'dan Web (WebAssembly) qilib eksport qilingan. Birinchi yuklanish ~45 MB.
-                        Kompyuterda klaviatura, telefonda sensor bilan o'ynaladi.
-                    </p>
+                    <span class="section-tag" data-i18n="play.tag">Try it now</span>
+                    <h2 class="section-title" data-i18n="play.title">▶ Play in the browser</h2>
+                    <p class="section-desc" data-i18n="play.desc"></p>
                 </div>
 
                 <div class="play-grid">
                     <div class="play-card">
-                        <img src="assets/images/rocket-boost/level.jpg" alt="Rocket Boost" class="play-cover">
+                        <img src="assets/images/rocket-boost/level.jpg" alt="Rocket Boost" class="play-cover" loading="lazy">
                         <div class="play-body">
                             <h3>🚀 Rocket Boost</h3>
-                            <p>Raketani maydonchaga sekin va tik qo'ndiring. 100 daraja, Space Guardians va Rocket Race rejimlari.</p>
+                            <p data-i18n="play.rocket.desc"></p>
                             <div class="play-keys">
-                                <span class="ctrl-badge">Space / ↑</span> dvigatel
-                                <span class="ctrl-badge">A D / ← →</span> burilish
-                                <span class="ctrl-badge">R</span> qayta
+                                <span class="ctrl-badge">Space / ↑</span> <span data-i18n="key.thrust">thrust</span>
+                                <span class="ctrl-badge">A D / ← →</span> <span data-i18n="key.turn">turn</span>
+                                <span class="ctrl-badge">R</span> <span data-i18n="key.restart">restart</span>
                             </div>
-                            <button class="btn btn-primary btn-play" data-game="games/rocket-boost/index.html" data-title="Rocket Boost">
-                                <span>▶ O'ynash</span>
+                            <button type="button" class="btn btn-primary btn-play" data-game="games/rocket-boost/index.html" data-title="Rocket Boost">
+                                <span data-i18n="card.play">▶ Play</span>
                             </button>
                         </div>
                     </div>
                     <div class="play-card">
-                        <img src="assets/images/neon-rails/versus.jpg" alt="Neon Rails" class="play-cover">
+                        <img src="assets/images/samurai/slash.jpg" alt="Samurai: Sakura Path" class="play-cover" loading="lazy">
+                        <div class="play-body">
+                            <h3>🗡️ Samurai: Sakura Path</h3>
+                            <p data-i18n="play.samurai.desc"></p>
+                            <div class="play-keys">
+                                <span class="ctrl-badge">A D</span> <span data-i18n="key.move">move</span>
+                                <span class="ctrl-badge">Space</span> <span data-i18n="key.jump">jump</span>
+                                <span class="ctrl-badge">J / K</span> <span data-i18n="key.attack">slash / shuriken</span>
+                                <span class="ctrl-badge">Shift</span> <span data-i18n="key.dash">dash</span>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-play" data-game="games/samurai/index.html" data-title="Samurai: Sakura Path">
+                                <span data-i18n="card.play">▶ Play</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="play-card">
+                        <img src="assets/images/neon-rails/versus.jpg" alt="Neon Rails" class="play-cover" loading="lazy">
                         <div class="play-body">
                             <h3>🏙️ Neon Rails</h3>
-                            <p>Endless runner: poyezd va to'siqlardan qoching. Menyudagi 2 PLAYERS — bitta klaviaturada ikki kishilik poyga.</p>
+                            <p data-i18n="play.neon.desc"></p>
                             <div class="play-keys">
-                                <span class="ctrl-badge">A D</span> yo'lak
-                                <span class="ctrl-badge">W / Space</span> sakrash
-                                <span class="ctrl-badge">S</span> yumalash
+                                <span class="ctrl-badge">A D</span> <span data-i18n="key.lane">lane</span>
+                                <span class="ctrl-badge">W / Space</span> <span data-i18n="key.jump">jump</span>
+                                <span class="ctrl-badge">S</span> <span data-i18n="key.roll">roll</span>
                             </div>
-                            <button class="btn btn-primary btn-play" data-game="games/neon-rails/index.html" data-title="Neon Rails">
-                                <span>▶ O'ynash</span>
+                            <button type="button" class="btn btn-primary btn-play" data-game="games/neon-rails/index.html" data-title="Neon Rails">
+                                <span data-i18n="card.play">▶ Play</span>
                             </button>
                         </div>
                     </div>
                 </div>
-                <p id="file-warning" class="file-warning" hidden>
-                    ⚠️ Sahifa fayl sifatida (file://) ochilgan. Godot web o'yinlari faqat server orqali ishlaydi:
-                    papkada <code>python -m http.server 8000</code> ni ishga tushirib, <code>http://localhost:8000</code> ni oching
-                    (GitHub Pages'da o'zi ishlaydi).
-                </p>
+                <p class="play-note" data-i18n="play.mobile"></p>
+                <p id="file-warning" class="file-warning" data-i18n-html="file.warning" hidden></p>
 
-                <div class="arcade-cabinet" id="minigame" style="margin-top: 48px;">
+                <div class="arcade-cabinet" id="minigame">
                     <div class="arcade-top-bar">
                         <div class="arcade-lights">
                             <span class="arcade-light light-red"></span>
                             <span class="arcade-light light-yellow"></span>
                             <span class="arcade-light light-green"></span>
                         </div>
-                        <div class="arcade-title">BONUS · BUG BLASTER (HTML5 CANVAS, SHU SAHIFADA YOZILGAN)</div>
-                        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-emerald);">● READY</div>
+                        <div class="arcade-title" data-i18n="arcade.title">BONUS · BUG BLASTER</div>
+                        <div class="arcade-ready">● READY</div>
                     </div>
                     <div class="arcade-screen-wrapper">
-                        <canvas id="minigame-canvas"></canvas>
+                        <canvas id="minigame-canvas" tabindex="0" aria-label="Bug Blaster mini-game"></canvas>
                     </div>
                     <div class="arcade-controls-guide">
-                        <div>🎮 Boshqaruv: <span class="ctrl-badge">W, A, S, D</span> yoki <span class="ctrl-badge">Strelkalar</span></div>
-                        <div>⚡ O'q otish: <span class="ctrl-badge">SPACE</span> yoki <span class="ctrl-badge">Sichqoncha / Sensor</span></div>
-                        <div>☕ Bonus: qahva triple-shot beradi</div>
+                        <div data-i18n-html="arcade.controls"></div>
+                        <div data-i18n-html="arcade.fire"></div>
+                        <div data-i18n="arcade.bonus"></div>
                     </div>
                 </div>
             </div>
@@ -256,12 +246,9 @@
         <section id="art" class="projects-section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">Blender · Sketchfab</span>
-                    <h2 class="section-title">3D modellar va asset pipeline</h2>
-                    <p class="section-desc">
-                        Modellarni qo'lda emas, Blender Python skriptlari bilan quraman: skriptni o'zgartirib qayta ishga tushirsam,
-                        model qaytadan yasaladi. Tayyor modellarni (Sketchfab) esa konvertor orqali o'yinga olaman va litsenziyasini yozib boraman.
-                    </p>
+                    <span class="section-tag" data-i18n="art.tag">Blender · Sketchfab</span>
+                    <h2 class="section-title" data-i18n="art.title">3D models and asset pipeline</h2>
+                    <p class="section-desc" data-i18n="art.desc"></p>
                 </div>
                 <div id="art-grid" class="art-grid"></div>
             </div>
@@ -271,66 +258,11 @@
         <section id="skills" class="skills-section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">Texnologiyalar</span>
-                    <h2 class="section-title">Ko'nikmalar va qayerda ishlatganim</h2>
-                    <p class="section-desc">
-                        Foizlar o'rniga har bir ko'nikma yonida u ishlatilgan loyiha yozilgan.
-                    </p>
+                    <span class="section-tag" data-i18n="skills.tag">Tech</span>
+                    <h2 class="section-title" data-i18n="skills.title">Skills and where I used them</h2>
+                    <p class="section-desc" data-i18n="skills.desc"></p>
                 </div>
-
-                <div class="skills-grid">
-                    <div class="skill-category-card">
-                        <div class="skill-cat-header">
-                            <div class="skill-cat-icon">🎮</div>
-                            <h3 class="skill-cat-title">Dvijoklar</h3>
-                        </div>
-                        <ul class="skill-items-list">
-                            <li class="skill-row"><span class="skill-name">Godot 4.6 — 3D, Jolt Physics, Forward+/Mobile</span><span class="skill-evidence">Night Tashkent, Rocket Boost, Neon Rails, Choyhona, Avatar</span></li>
-                            <li class="skill-row"><span class="skill-name">Unity 6 — URP, Input System, UI Toolkit</span><span class="skill-evidence">MarsGo, Bunker</span></li>
-                            <li class="skill-row"><span class="skill-name">Eksport: Android (Gradle, imzolangan APK), Web/WASM</span><span class="skill-evidence">Rocket Boost, Neon Rails</span></li>
-                            <li class="skill-row"><span class="skill-name">Shaderlar va VFX: zarrachalar, alanga, fog, curved world</span><span class="skill-evidence">Rocket Boost, Neon Rails, Avatar</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category-card">
-                        <div class="skill-cat-header">
-                            <div class="skill-cat-icon">💻</div>
-                            <h3 class="skill-cat-title">Tillar</h3>
-                        </div>
-                        <ul class="skill-items-list">
-                            <li class="skill-row"><span class="skill-name">GDScript 2.0 — statik tiplar, signallar, @export, Resource</span><span class="skill-evidence">hamma Godot loyihalari</span></li>
-                            <li class="skill-row"><span class="skill-name">C# — interfeyslar, eventlar, editor skriptlari</span><span class="skill-evidence">MarsGo, Bunker</span></li>
-                            <li class="skill-row"><span class="skill-name">Python — ma'lumot pipeline, generatorlar, Blender API</span><span class="skill-evidence">OSM shahar, daraja generatori, mashina konvertori, rig skriptlari</span></li>
-                            <li class="skill-row"><span class="skill-name">HTML/CSS/JS</span><span class="skill-evidence">shu portfolio va undagi Canvas o'yini</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category-card">
-                        <div class="skill-cat-header">
-                            <div class="skill-cat-icon">⚙️</div>
-                            <h3 class="skill-cat-title">Gameplay arxitekturasi</h3>
-                        </div>
-                        <ul class="skill-items-list">
-                            <li class="skill-row"><span class="skill-name">State machine, object pool, event bus</span><span class="skill-evidence">Neon Rails</span></li>
-                            <li class="skill-row"><span class="skill-name">Data-driven dizayn: .tres / LevelDef, protsedural darajalar</span><span class="skill-evidence">Rocket Boost, MarsGo, Neon Rails</span></li>
-                            <li class="skill-row"><span class="skill-name">Streaming va fon oqimlari (WorkerThreadPool)</span><span class="skill-evidence">Night Tashkent</span></li>
-                            <li class="skill-row"><span class="skill-name">Save versiyalash va migratsiya, lokalizatsiya</span><span class="skill-evidence">Choyhona, Rocket Boost</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category-card">
-                        <div class="skill-cat-header">
-                            <div class="skill-cat-icon">🛠️</div>
-                            <h3 class="skill-cat-title">Asboblar va ish usuli</h3>
-                        </div>
-                        <ul class="skill-items-list">
-                            <li class="skill-row"><span class="skill-name">AI yordamida dasturlash (Claude Code, parallel agentlar)</span><span class="skill-evidence">spetsifikatsiya → kod → test → skrinshot bilan tekshirish</span></li>
-                            <li class="skill-row"><span class="skill-name">Avtomatik testlar: headless test, bot soak, skrinshot tool'lar</span><span class="skill-evidence">Rocket Boost, Neon Rails, Choyhona, MarsGo</span></li>
-                            <li class="skill-row"><span class="skill-name">Blender 5.2, Sketchfab, glb/FBX eksport, LOD</span><span class="skill-evidence">3D ishlar bo'limi</span></li>
-                            <li class="skill-row"><span class="skill-name">Git, Linux server (Ubuntu, VirtualBox, netplan, systemd)</span><span class="skill-evidence">loyihalar repo'lari, universitetdagi System Administration kursi</span></li>
-                        </ul>
-                    </div>
-                </div>
+                <div id="skills-grid" class="skills-grid"></div>
             </div>
         </section>
 
@@ -338,65 +270,11 @@
         <section id="experience" class="experience-section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">Yo'l</span>
-                    <h2 class="section-title">Qanday o'sib boryapman</h2>
-                    <p class="section-desc">Hamma sanalar loyiha fayllari va commit tarixidan olingan.</p>
+                    <span class="section-tag" data-i18n="journey.tag">Journey</span>
+                    <h2 class="section-title" data-i18n="journey.title">How I'm growing</h2>
+                    <p class="section-desc" data-i18n="journey.desc"></p>
                 </div>
-
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2026-yil noyabr</div>
-                            <h3 class="timeline-title">Neon Rails, Choyhona Simulator, Avatar arena, Bunker</h3>
-                            <p class="timeline-desc">
-                                Endless runner'ga 2 o'yinchilik poyga rejimi qo'shildi va web'ga chiqarildi. Choyhona'da 5 ta choyhona va save migratsiyasi,
-                                Avatar'da 16 ta element qobiliyati, Unity'da Bunker uchun UI Toolkit menyu/lobby kit'i va Blender'da bunker ombori.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2026-yil 20-oktyabr – hozir</div>
-                            <h3 class="timeline-title">Night Tashkent</h3>
-                            <p class="timeline-desc">
-                                OpenStreetMap'dan haqiqiy Toshkentni quradigan Python pipeline, chunk streaming, mashina fizikasi, ko'priklar,
-                                landmarklar va Sketchfab mashinalari. Mashina uchun sedanni Blender'da skript bilan yasadim.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2026-yil 16-oktyabr</div>
-                            <h3 class="timeline-title">Unity'ga o'tish: MarsGo va hazmat personaj</h3>
-                            <p class="timeline-desc">
-                                Godot'dagi raketa o'yinini Unity 6 + URP'ga ko'chirib, ikki dvijokni solishtirdim. Blender'da protsedural personaj yasab, FBX qilib Unity'ga oldim.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2026-yil 15–27-oktyabr</div>
-                            <h3 class="timeline-title">Rocket Boost — birinchi to'liq o'yin</h3>
-                            <p class="timeline-desc">
-                                Bitta prototipdan 100 darajali o'yinga: generator, 7 raketa, 2 qo'shimcha rejim, AdMob, imzolangan Android APK, Yandex Games uchun web build va uch tilga tarjima.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2026 · o'qish</div>
-                            <h3 class="timeline-title">Talaba, IT-203-25 guruhi</h3>
-                            <p class="timeline-desc">
-                                System Administration kursi: VirtualBox'da Ubuntu Server, foydalanuvchilar va huquqlar, paketlar, systemd, tarmoq (netplan, statik IP, /etc/hosts).
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <div id="timeline" class="timeline"></div>
             </div>
         </section>
 
@@ -405,12 +283,11 @@
             <div class="container">
                 <div class="contact-card contact-card-single">
                     <div class="contact-info">
-                        <h2 class="contact-info-title">Birga o'yin qilamizmi? 🚀</h2>
-                        <p class="contact-info-desc">
-                            Junior game developer, gameplay yoki tools programmer sifatida jamoaga qo'shilishga tayyorman.
-                            Kod, build yoki loyihalar haqida savol bo'lsa, quyidagi havolalar orqali yozing.
-                        </p>
+                        <img class="contact-photo" src="assets/images/profile/xabibullo-square.jpg" alt="Xabibullo Shamsiddinov" width="96" height="96" loading="lazy">
+                        <h2 class="contact-info-title" data-i18n="contact.title">Let's make games together 🚀</h2>
+                        <p class="contact-info-desc" data-i18n="contact.desc"></p>
                         <div id="social-links" class="social-links-grid"></div>
+                        <p class="contact-meta"><span data-i18n="card.location">📍 Tashkent, Uzbekistan</span> · <span data-i18n="card.uni">🎓 Millat Umidi University</span></p>
                     </div>
                 </div>
             </div>
@@ -418,67 +295,67 @@
 
         <footer class="footer">
             <div class="container">
-                <p class="footer-quote">// "Avval o'ynaladigan qil, keyin chiroyli qil."</p>
-                <p>© 2026 Xabibullo Shamsiddinov. Xarita ma'lumotlari © OpenStreetMap contributors. Uchinchi tomon modellari mualliflariga tegishli.</p>
+                <p class="footer-quote" data-i18n="footer.quote"></p>
+                <p data-i18n="footer.rights"></p>
             </div>
         </footer>
 
     </div>
 
     <!-- PROJECT MODAL -->
-    <div id="project-modal" class="modal-overlay">
+    <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
         <div class="modal-container">
             <div class="modal-header">
                 <div>
-                    <h2 id="modal-title" style="font-size: 1.6rem; font-weight: 800; margin-bottom: 4px;">O'yin nomi</h2>
-                    <p id="modal-tagline" style="color: var(--primary); font-family: var(--font-mono); font-size: 0.9rem;">Qisqacha</p>
+                    <h2 id="modal-title" class="modal-title"></h2>
+                    <p id="modal-tagline" class="modal-tagline"></p>
                 </div>
-                <button id="modal-close" class="modal-close-btn" title="Yopish">✕</button>
+                <button type="button" id="modal-close" class="modal-close-btn" data-i18n-title="modal.close" data-i18n-aria="modal.close">✕</button>
             </div>
 
             <div class="modal-body">
                 <div class="modal-gallery">
-                    <img id="modal-gallery-main" src="" alt="">
+                    <img id="modal-gallery-main" src="data:," alt="">
                     <p id="modal-gallery-caption" class="gallery-caption"></p>
                     <div id="modal-gallery-thumbs" class="gallery-thumbs"></div>
                 </div>
 
-                <div class="modal-tabs">
-                    <button class="modal-tab-btn active" data-tab="overview">Umumiy</button>
-                    <button class="modal-tab-btn" data-tab="mechanics">Mexanikalar</button>
-                    <button class="modal-tab-btn" data-tab="challenge">Muammo va kod</button>
+                <div class="modal-tabs" role="tablist">
+                    <button type="button" class="modal-tab-btn active" data-tab="overview" role="tab" data-i18n="modal.overview">Overview</button>
+                    <button type="button" class="modal-tab-btn" data-tab="mechanics" role="tab" data-i18n="modal.mechanics">Mechanics</button>
+                    <button type="button" class="modal-tab-btn" data-tab="challenge" role="tab" data-i18n="modal.challenge">Problem & code</button>
                 </div>
 
-                <div id="tab-overview" class="tab-pane active">
+                <div id="tab-overview" class="tab-pane active" role="tabpanel">
                     <div class="modal-facts">
-                        <div class="modal-fact"><span>DVIJOK</span><strong id="modal-engine">Godot</strong></div>
-                        <div class="modal-fact"><span>ROL</span><strong id="modal-role">Solo</strong></div>
-                        <div class="modal-fact"><span>VAQT</span><strong id="modal-duration">1 oy</strong></div>
-                        <div class="modal-fact"><span>HOLAT</span><strong id="modal-status">—</strong></div>
+                        <div class="modal-fact"><span data-i18n="modal.engine">ENGINE</span><strong id="modal-engine"></strong></div>
+                        <div class="modal-fact"><span data-i18n="modal.role">ROLE</span><strong id="modal-role"></strong></div>
+                        <div class="modal-fact"><span data-i18n="modal.time">TIMELINE</span><strong id="modal-duration"></strong></div>
+                        <div class="modal-fact"><span data-i18n="modal.status">STATUS</span><strong id="modal-status"></strong></div>
                     </div>
                     <div id="modal-metrics" class="modal-metrics"></div>
 
-                    <h4 style="margin-bottom: 8px; color: var(--primary);">Loyiha haqida:</h4>
-                    <p id="modal-full-desc" style="color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;"></p>
+                    <h4 class="modal-h4" data-i18n="modal.about">About the project:</h4>
+                    <p id="modal-full-desc" class="modal-full-desc"></p>
                     <p id="modal-note" class="modal-note" hidden></p>
 
-                    <div id="modal-actions" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;"></div>
+                    <div id="modal-actions" class="modal-actions"></div>
                 </div>
 
-                <div id="tab-mechanics" class="tab-pane">
-                    <h4 style="margin-bottom: 12px; color: var(--primary);">Qilingan asosiy tizimlar:</h4>
-                    <ul id="modal-mechanics" style="list-style: none; margin-bottom: 20px;"></ul>
+                <div id="tab-mechanics" class="tab-pane" role="tabpanel">
+                    <h4 class="modal-h4" data-i18n="modal.systems">Key systems I built:</h4>
+                    <ul id="modal-mechanics" class="modal-mechanics"></ul>
                     <div id="modal-tags" class="card-tags"></div>
                 </div>
 
-                <div id="tab-challenge" class="tab-pane">
+                <div id="tab-challenge" class="tab-pane" role="tabpanel">
                     <div class="challenge-box">
-                        <div class="challenge-title">⚠️ Muammo:</div>
-                        <p id="modal-challenge-prob" style="font-size: 0.92rem; color: var(--text-main); margin-bottom: 12px;"></p>
-                        <div class="challenge-title" style="color: var(--accent-emerald);">💡 Yechim:</div>
-                        <p id="modal-challenge-sol" style="font-size: 0.92rem; color: var(--text-main);"></p>
+                        <div class="challenge-title" data-i18n="modal.problem">⚠️ Problem:</div>
+                        <p id="modal-challenge-prob" class="challenge-text"></p>
+                        <div class="challenge-title challenge-title-ok" data-i18n="modal.solution">💡 Solution:</div>
+                        <p id="modal-challenge-sol" class="challenge-text"></p>
                     </div>
-                    <h4 style="margin-bottom: 8px; color: var(--primary);">Loyihadan kod: <span id="modal-code-source" class="code-source"></span></h4>
+                    <h4 class="modal-h4"><span data-i18n="modal.code">Code from the project:</span> <span id="modal-code-source" class="code-source"></span></h4>
                     <pre class="code-block-wrapper"><code id="modal-code"></code></pre>
                 </div>
             </div>
@@ -486,21 +363,22 @@
     </div>
 
     <!-- GAME PLAYER OVERLAY -->
-    <div id="game-overlay" class="modal-overlay">
+    <div id="game-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="game-title" hidden>
         <div class="game-frame-wrap">
             <div class="game-frame-bar">
-                <strong id="game-title">O'yin</strong>
-                <div style="display:flex; gap:8px;">
-                    <a id="game-newtab" href="#" target="_blank" class="card-btn card-btn-ghost">↗ Yangi oynada</a>
-                    <button id="game-close" class="modal-close-btn" title="Yopish">✕</button>
+                <strong id="game-title"></strong>
+                <div class="game-frame-actions">
+                    <a id="game-newtab" href="#" target="_blank" rel="noopener" class="card-btn card-btn-ghost" data-i18n="game.newtab">↗ Open in new tab</a>
+                    <button type="button" id="game-close" class="modal-close-btn" data-i18n-title="modal.close" data-i18n-aria="modal.close">✕</button>
                 </div>
             </div>
-            <iframe id="game-frame" title="O'yin" allow="autoplay; fullscreen; gamepad"></iframe>
+            <iframe id="game-frame" title="Game" allow="autoplay; fullscreen; gamepad"></iframe>
         </div>
     </div>
 
-    <script src="js/audio.js"></script>
+    <script src="js/content.js"></script>
     <script src="js/projects-data.js"></script>
+    <script src="js/audio.js"></script>
     <script src="js/mini-game.js"></script>
     <script src="js/main.js"></script>
 </body>
